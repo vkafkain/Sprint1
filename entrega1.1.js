@@ -31,12 +31,14 @@ function comptar(){
     }
 }
 const arrayDeuVegades = [];
-for (let i = 0; i < 10; i++){
+for (let j = 0; j < 10; j++){
     arrayDeuVegades.push(comptar());
 }
-console.log(arrayDeuVegades);
+
 
 //Exercici 2
+
+
 
 
 
