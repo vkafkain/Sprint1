@@ -38,7 +38,7 @@ for (let j = 0; j < 10; j++){
 
 //Exercici 2
 
-
+let mostrar = (name => console.log(`L'usuari ${name} te molt ping.`))(`Omar`);
 
 
 
