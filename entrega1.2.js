@@ -2,4 +2,5 @@
 
 //Exercici 1
 
-((a, b) => console.log(a + b))(10, 2);
+let sumaAuto = ((a, b) => console.log(a + b))(10, 2);
+
