@@ -2,13 +2,13 @@
 
 //Exercici 1
 
-let sumaAuto = ((a, b) => console.log(a + b))(10, 2);
+const sumaAuto = ((a, b) => console.log(a + b))(10, 2);
 
 //Nivell 2
 
 //Exercici 1
 
-let paramNom = (name => ({nom: name}));
+const paramNom = (name => ({nom: name}));
 
 console.log(paramNom("Victor"));
 
