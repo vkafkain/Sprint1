@@ -25,12 +25,14 @@ console.log(`Bon dia, ${aniversari(`Victor`)} fas 36 anys`);
 //Nivell 3
 
 //Exercici 1
+
+const arrayDeuVegades = [];
 function comptar(){
-    for (let i = 0; i <= 9; i++){
+    for (let i = 0; i < 10; i++){
         console.log(i);
     }
 }
-const arrayDeuVegades = [];
+
 for (let j = 0; j < 10; j++){
     arrayDeuVegades.push(comptar());
 }

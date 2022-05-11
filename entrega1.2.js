@@ -2,13 +2,13 @@
 
 //Exercici 1
 
-const sumaAuto = ((a, b) => console.log(a + b))(10, 2);
+let sumaAuto = ((a, b) => console.log(a + b))(10, 2);
 
 //Nivell 2
 
 //Exercici 1
 
-const paramNom = (name => ({nom: name}));
+let paramNom = (name => ({nom: name}));
 
 console.log(paramNom("Victor"));
 
@@ -49,10 +49,19 @@ ElPadrino.prototype.genere = function() {
     console.log('mafia');
 }
 
+let LaVidaEsUnMiracle = function(){
+    Pelicules.apply(this, arguments);
+};
+LaVidaEsUnMiracle.prototype = Object.create(Pelicules.prototype);
+LaVidaEsUnMiracle.prototype.constructor = LaVidaEsUnMiracle;
+
+LaVidaEsUnMiracle.prototype.genere = function() {
+    console.log('tragicomedia');
+}
+
 let elPadrino = new ElPadrino();
+let laVidaEsUnMilagro = new LaVidaEsUnMiracle();
 
 elPadrino.genere();
-
-
-
+laVidaEsUnMilagro.genere();
 
