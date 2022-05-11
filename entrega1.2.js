@@ -19,9 +19,7 @@ class Persona {
         this.nom = nom;
     }
 
-    dirNom() {
-        console.log(this.nom);
-    }
+    dirNom() {console.log(this.nom)};
 }
 
 const funcioNom = new Persona("Victor");
@@ -32,11 +30,29 @@ funcioNom.dirNom();
 
 //Exercici 1
 
-function pelicules(titol) {
-    this.titol = titol;
+let Pelicules = function() {
+    if (this.constructor === Pelicules) {
+        return console.log("No es pot instanciar una clase abstracta");
+    }
+};
+Pelicules.prototype.genere = function() {
+    return console.log("Metode abstracte")
+};
+
+let ElPadrino = function() {
+    Pelicules.apply(this, arguments);
+};
+ElPadrino.prototype = Object.create(Pelicules.prototype);
+ElPadrino.prototype.constructor = ElPadrino;
+
+ElPadrino.prototype.genere = function() {
+    console.log('mafia');
 }
 
-let cine = new pelicules("El padrino");
+let elPadrino = new ElPadrino();
 
-console.log(cine);
+elPadrino.genere();
+
+
+
 
