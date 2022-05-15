@@ -1,7 +1,7 @@
 //Nivell 1
 
 //Exercici 1
-/* 
+
 const rebut = false;
 
 function missatgeRebut(){
@@ -22,7 +22,7 @@ const pasarItv = ((antiguitat, callback) => {
 
 let callback = (missatge) => {console.log(missatge)};
 
-pasarItv(1, callback);  */
+pasarItv(1, callback); 
 
 //Nivell 2
 
