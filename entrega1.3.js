@@ -57,7 +57,7 @@ const getEmployee = (id) => {
         let buscat = employees.findIndex(employees => employees.id == id);
             if(buscat >= 0) {
                 empleat = employees[buscat].name;
-                resolve(`L'empleat ${empleat}, es troba a la base de dades`);
+                resolve(`${empleat}`);
             } else { 
                 reject(`L'empleat ${empleat}, NO es troba a la base de dades`);
             }
@@ -81,11 +81,29 @@ const getSalary = (employee) => {
         }
     });
 }
-getSalary({
-    id: 1,
-    name: 'Linux Torvalds'
-})
+getSalary(employees[0])
     .then((resolta) => console.log(resolta))
     .catch((error) => console.log(error));
 
+// Exercici 3
 
+
+let idBuscat = 4
+
+Promise.all([getEmployee(idBuscat), getSalary(employees[idBuscat-1])])
+    .then(valors => {console.log(valors);
+    })
+    .catch((error) =>{          //Nivell 3 Exercici 1
+        console.log(error);
+    });
+
+
+
+
+
+
+
+
+/* 
+Fixa un element catch a la invocació del nivell 
+anterior que capturi qualsevol error i el mostri per la consola. */
