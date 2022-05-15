@@ -88,22 +88,14 @@ getSalary(employees[0])
 // Exercici 3
 
 
-let idBuscat = 4
+let idBuscat = 1
 
 Promise.all([getEmployee(idBuscat), getSalary(employees[idBuscat-1])])
-    .then(valors => {console.log(valors);
+    .then(valors => {console.log(valors)
     })
-    .catch((error) =>{          //Nivell 3 Exercici 1
-        console.log(error);
+    .catch((error) =>{console.log(error) //Nivell 3 Exercici 1
     });
 
 
-
-
-
-
-
-
-/* 
-Fixa un element catch a la invocació del nivell 
-anterior que capturi qualsevol error i el mostri per la consola. */
+    module.exports = {"getEmployee" : getEmployee}
+    
