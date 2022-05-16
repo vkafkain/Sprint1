@@ -95,7 +95,3 @@ Promise.all([getEmployee(idBuscat), getSalary(employees[idBuscat-1])])
     })
     .catch((error) =>{console.log(error) //Nivell 3 Exercici 1
     });
-
-
-    module.exports = {"getEmployee" : getEmployee}
-    
