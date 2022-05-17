@@ -22,7 +22,7 @@ const pasarItv = ((antiguitat, callback) => {
 
 let callback = (missatge) => {console.log(missatge)};
 
-pasarItv(1, callback); 
+pasarItv(4, callback); 
 
 //Nivell 2
 
