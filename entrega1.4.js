@@ -61,7 +61,7 @@ const funcioAsincrona = async (id) => {
         nameAndSalary = await getSalary(employees[id-1]);
         console.log(`${nameAndSalary}€`);
 
-        console.log('Petició finalitzada amb exit!')
+        console.log('Petició finalitzada amb exit!');
 
     }catch(error){
         console.log(error);
@@ -70,7 +70,7 @@ const funcioAsincrona = async (id) => {
 funcioAsincrona(1);
 
 
-//Exercici 2
+//Exercici 2 + 3
 
 
 let pingUsuari = 55;
@@ -93,7 +93,7 @@ const mostraPing = async (ping) => {
         let permis = await delayed(ping);
         console.log(`${permis}`);
 
-        console.log('Log del usuari')
+        console.log('Log del usuari');
 
     }catch (error) {
         console.log(error);
@@ -102,7 +102,7 @@ const mostraPing = async (ping) => {
 
 mostraPing(pingUsuari);
 
-// Nivell 2
+// Nivell 2 + 3
 
 // Exercici 1 
 
@@ -112,7 +112,7 @@ const doble = (numero) => {
         if (!isNaN(numero)){
             setTimeout(()=>{resolve (numero*2)},2000);
         }else{
-            reject('El camp introduit no és un número')
+            reject('El camp introduit no és un número');
         }
     })
 }
@@ -126,7 +126,7 @@ const sumaDobles = async (num1, num2, num3) => {
         console.log(error);
     }
 }
-sumaDobles(2,3,4); 
+sumaDobles(6,35,44); 
 
 //Nivell 3
 
@@ -137,3 +137,5 @@ Control de errors, exercici 1, catch a la funcio que es diu funcioAsincrona. Al 
 he introduit un reject del qual veu la funcio mostraPing amb un catch i al exercici 3, he introduit un reject
 que veu la funció sumaDobles amb un catch que ens dona l'error per log.
  */
+
+

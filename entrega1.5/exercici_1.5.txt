@@ -1,0 +1,1 @@
+Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs
