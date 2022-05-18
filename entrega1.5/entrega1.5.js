@@ -28,3 +28,37 @@ fs.readFile('exercici_1.5.txt', {encoding: 'utf-8'}, (error, dades) => {
 //Exercici 3
 
 let zlib = require('zlib');
+let tipusCompresio = zlib.createGzip();
+let arxiu = 'exercici_1.5.txt';
+let readstream = fs.createReadStream(arxiu);
+
+const comprimir = (arxiu) => {
+    let arxiuComprimit = arxiu+'.gz';
+    writestream = fs.createWriteStream(arxiuComprimit);
+    readstream.pipe(tipusCompresio).pipe(writestream);
+}
+
+comprimir(arxiu);
+
+//Nivell 2
+
+//Exercici 1
+
+const recursivitat = (num) => {
+    let missatge = `Queden ${num} segons per finalitzar`;
+    setTimeout(() => {
+        if(num === 0){
+            return;
+        }
+        if(num > 0){
+            console.log(missatge)
+        return recursivitat(num -1);
+        }
+    },1000);
+}
+
+recursivitat(5);  
+
+//Exercici 2
+
+
