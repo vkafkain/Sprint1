@@ -2,7 +2,11 @@
 
 //Exercici 1
 
-let sumaAuto = ((a, b) => console.log(a + b))(10, 2);
+let sumaAuto = ((a, b) => {
+    return a + b
+})(10, 2);
+
+console.log(sumaAuto);
 
 //Nivell 2
 
