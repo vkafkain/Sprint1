@@ -1,7 +1,7 @@
 // Nivell 1
 
 // Exercici 1
-/* 
+
 let fs = require('fs');
 
 let text = `Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs`;
@@ -115,7 +115,7 @@ const codificar = () => {
     
 codificar(); 
     
- */
+
 //Encriptem
 
 //Comprobem si tenim el modul cryto activat.
@@ -127,53 +127,73 @@ try {
     console.log('crypto support is disabled!');
 }
 
-//encryptem els arxius
+//Encriptem els arxius
 
-const {
-    createReadStream,
-    createWriteStream,
-    fstat,
-} = require('fs');
+const encriptacioArxiu = () => {
+    setTimeout (() => {
+        const cryto = require('crypto');
+        const algorith = 'aes-192-cbc';
+        const key = 'vOVH6sdmpNWjRRIqCc7rdxs0';
+        const iv = crypto.randomBytes(16);
+        const llegir = fs.createReadStream('exercici_base64.txt');
+        const llegir2 = fs.createReadStream('exercici_hex.txt');
+        const encriptar = crypto.createCipheriv(algorith, key, iv);
+        const escriure = fs.createWriteStream('exercici_base64_enc.txt');
+        const escriure2 = fs.createWriteStream('exercici_hex_enc.txt');
 
-const {
-    pipeline
-} = require('stream');
+llegir.pipe(encriptar).pipe(escriure);
+llegir2.pipe(encriptar).pipe(escriure2);
+}, 5000);
 
-const {
-    scrypt,
-    randomFill,
-    createCipheriv,
-} = require('crypto');
-
-const algorith = 'aes-192-cbc';
-const password = 'Hello World';
-
-scrypt(password, 'salt', 24, (error, key) => {
-    if(error) console.log(error);
-    randomFill(new Uint8Array(16), (error, iv) => {
-        if(error) console.log(error);
-
-        const cipher = createCipheriv(algorith, key, iv);
-
-        const input = createReadStream('exercici_base64.txt');
-
-        const output = createWriteStream('exercici_base64.enc');
-
-        const input2 = createReadStream('exercici_hex.txt');
-
-        const output2 = createWriteStream('exercici_hex.enc');
-
-        pipeline(input, cipher, output, (error) => {
-            error ? console.log(`Error: ${error}`) : console.log(`El fitxer ha estat encriptat amb exit`);
-        });
-        pipeline(input2, cipher, output2, (error) => {
-            error ? console.log(`Error: ${error}`) : console.log(`El fitxer ha estat encriptat amb exit`);
-        })
-    });
+setTimeout(() => {
+    fs.unlinkSync('exercici_base64.txt', (error) => {
+        if (error) {
+        console.log(error);
+    }
 });
-
-const eliminarFitxers = () => {
-    fs.unlink('exercici_base64.txt', (error) => {
-        
-    });
+    fs.unlinkSync('exercici_hex.txt', (error) => {
+        if (error) {
+        console.log(error);
+    }
+});
+},5000);
+    console.log('Arxius Eliminats amb exit');
 }
+
+encriptacioArxiu();
+
+//Desencriptem els arxius => tornen a base64 i hex respectivament 
+
+
+const desencriptacioArxiu = () => {
+    setTimeout (() => {
+        const cryto = require('crypto');
+        const algorith = 'aes-192-cbc';
+        const key = 'vOVH6sdmpNWjRRIqCc7rdxs0';
+        const iv = crypto.randomBytes(16);
+        const llegir = fs.createReadStream('exercici_base64_enc.txt');
+        const llegir2 = fs.createReadStream('exercici_hex_enc.txt');
+        const desencriptar = crypto.createDecipheriv(algorith, key, iv);
+        const escriure = fs.createWriteStream('exercici_base64.txt');
+        const escriure2 = fs.createWriteStream('exercici_hex.txt');
+
+llegir.pipe(desencriptar).pipe(escriure);
+llegir2.pipe(desencriptar).pipe(escriure2);
+    }, 6000);
+
+setTimeout(() => {
+    fs.unlinkSync('exercici_base64_enc.txt', (error) => {
+        if (error) {
+        console.log(error);
+    }
+});
+    fs.unlinkSync('exercici_hex_enc.txt', (error) => {
+        if (error) {
+        console.log(error);
+    }
+});
+},7000);
+    console.log('Arxius Eliminats amb exit');
+}
+
+desencriptacioArxiu();

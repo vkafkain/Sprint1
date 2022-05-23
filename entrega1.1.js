@@ -26,16 +26,35 @@ console.log(`Bon dia, ${aniversari(`Victor`)} fas 36 anys`);
 
 //Exercici 1
 
-const arrayDeuVegades = [];
-function comptar(){
+var myArray = [];
+
+const miTest = () => {
+    for (let i=0; i<9; i++) {
+        console.log(i)
+        }
+    return i;
+};
+
+for (var i=0; i<10; i++) {
+  myArray.push(miTest());
+}
+console.log(myArray);
+
+
+
+let arrayDeuVegades = [];
+
+const comptar = () => {
     for (let i = 0; i < 10; i++){
         console.log(i);
     }
+    return i;
 }
 
 for (let j = 0; j < 10; j++){
     arrayDeuVegades.push(comptar());
 }
+console.log(arrayDeuVegades);
 
 
 //Exercici 2
