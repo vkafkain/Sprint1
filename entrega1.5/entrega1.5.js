@@ -4,41 +4,36 @@
 
 let fs = require('fs');
 
-let text = `Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs`;
 
-fs.writeFile('exercici_1.5.txt', text, {encoding: 'utf-8'}, (error) => {
-    if (error){
-        console.log(`Error: ${error}`);
-    } else {
-        console.log(`La escriptura s'ha realitzat correctament!`)
-    }
-});
+const escriureArxiu = (nom, info) => {
+    fs.writeFile(nom, info, error => {
+        if(error) {
+            console.log(`Error: ${error}`);
+            
+        }
+    });
+}
 
 //Exercici 2
 
-fs.readFile('exercici_1.5.txt', {encoding: 'utf-8'}, (error, dades) => {
-    if(error){
-        console.log(`Error: ${error}`);
-    } else {
-        console.log(`Llegint dades...`);
-        console.log(`${dades}`);
-    }
+const llegirArxiu = () => 
+    fs.readFile('exercici_1.5.txt', 'utf8',(error, data) => {
+    error ? console.log(`Error: ${error}`):
+    console.log(data);
 });
+
 
 //Exercici 3
 
 let zlib = require('zlib');
 let tipusCompresio = zlib.createGzip();
-let arxiu = 'exercici_1.5.txt';
-let readstream = fs.createReadStream(arxiu);
-
-const comprimir = (arxiu) => {
-    let arxiuComprimit = arxiu+'.gz';
-    writestream = fs.createWriteStream(arxiuComprimit);
-    readstream.pipe(tipusCompresio).pipe(writestream);
+let nomArxiu = 'exercici_1.5.txt';
+const comprimir = () => {
+    let llegir = fs.createReadStream(nomArxiu);
+    let escriure = fs.createWriteStream(nomArxiu+'.gz');
+    llegir.pipe(tipusCompresio).pipe(escriure)
 }
 
-comprimir(arxiu);
 
 //Nivell 2
 
@@ -56,14 +51,11 @@ const recursivitat = (num) => {
         return recursivitat(num -1);
         }
     },1000);
-    
 }
-
-recursivitat(5);  
 
 //Exercici 2
 
-
+const mostrarDir = () => {
 const { exec } = require('child_process');
 
 exec('dir', (error, stdout, stderr) => {
@@ -77,6 +69,7 @@ exec('dir', (error, stdout, stderr) => {
     }
     console.log(`stdout: ${stdout}`);
 });
+}
 
 //Nivell 3
 
@@ -85,36 +78,17 @@ exec('dir', (error, stdout, stderr) => {
 //Codifiquem
 
 const codificar = () => {
-    fs.readFile('exercici_1.5.txt', 'hex', (error, data) => {
-        if(!error) {
-            fs.writeFile('exercici_hex.txt', data, (error) => {
-                if(error) {
-                    console.log(`Error: ${error}`);
-                }else {
-                    console.log(`S'ha creat un arxiu en hexadecimal`);
-                }
-            });
-        } else {
-            console.log(`Error: ${error}`);
-        }
-    });
-    fs.readFile('exercici_1.5.txt', 'base64', (error, data) => {
-        if(!error) {
-            fs.writeFile('exercici_base64.txt', data, (error) => {
-                if(error) {
-                    console.log(`Error: ${error}`);
-                }else {
-                    console.log(`S'ha creat un arxiu en base64`);
-                }
-            });
-        } else {
-            console.log(`Error: ${error}`);
-        }
+fs.readFile('exercici_1.5.txt', 'utf8', (error,data) => {
+    if (error) {
+        console.log(error);
+    }
+    let temp = Buffer.from(data).toString('base64');
+    escriureArxiu('exercici_1.5_64.txt',temp);
+
+    temp = Buffer.from(data).toString('hex');
+    escriureArxiu('exercici_1.5_hex.txt',temp);
     });
 }
-    
-codificar(); 
-    
 
 //Encriptem
 
@@ -135,35 +109,32 @@ const encriptacioArxiu = () => {
         const algorith = 'aes-192-cbc';
         const key = 'vOVH6sdmpNWjRRIqCc7rdxs0';
         const iv = crypto.randomBytes(16);
-        const llegir = fs.createReadStream('exercici_base64.txt');
-        const llegir2 = fs.createReadStream('exercici_hex.txt');
+        const llegir = fs.createReadStream('exercici_1.5_64.txt');
+        const llegir2 = fs.createReadStream('exercici_1.5_hex.txt');
         const encriptar = crypto.createCipheriv(algorith, key, iv);
         const escriure = fs.createWriteStream('exercici_base64_enc.txt');
         const escriure2 = fs.createWriteStream('exercici_hex_enc.txt');
 
 llegir.pipe(encriptar).pipe(escriure);
 llegir2.pipe(encriptar).pipe(escriure2);
-}, 5000);
+}, 500);
 
 setTimeout(() => {
-    fs.unlinkSync('exercici_base64.txt', (error) => {
+    fs.unlinkSync('exercici_1.5_64.txt', (error) => {
         if (error) {
         console.log(error);
     }
 });
-    fs.unlinkSync('exercici_hex.txt', (error) => {
+    fs.unlinkSync('exercici_1.5_hex.txt', (error) => {
         if (error) {
         console.log(error);
     }
 });
-},5000);
+},1000);
     console.log('Arxius Eliminats amb exit');
 }
 
-encriptacioArxiu();
-
 //Desencriptem els arxius => tornen a base64 i hex respectivament 
-
 
 const desencriptacioArxiu = () => {
     setTimeout (() => {
@@ -174,12 +145,12 @@ const desencriptacioArxiu = () => {
         const llegir = fs.createReadStream('exercici_base64_enc.txt');
         const llegir2 = fs.createReadStream('exercici_hex_enc.txt');
         const desencriptar = crypto.createDecipheriv(algorith, key, iv);
-        const escriure = fs.createWriteStream('exercici_base64.txt');
-        const escriure2 = fs.createWriteStream('exercici_hex.txt');
+        const escriure = fs.createWriteStream('exercici_1.5_64.txt');
+        const escriure2 = fs.createWriteStream('exercici_1.5_hex.txt');
 
 llegir.pipe(desencriptar).pipe(escriure);
 llegir2.pipe(desencriptar).pipe(escriure2);
-    }, 6000);
+    }, 2000);
 
 setTimeout(() => {
     fs.unlinkSync('exercici_base64_enc.txt', (error) => {
@@ -192,8 +163,27 @@ setTimeout(() => {
         console.log(error);
     }
 });
-},7000);
+},3000);
     console.log('Arxius Eliminats amb exit');
+
 }
 
+//Funcio recursiva
+
+// recursivitat();
+
+//Mostrar directori d'usuari
+
+// mostrarDir();
+
+//Funcions de tractarments d'arxius
+
+llegirArxiu();
+escriureArxiu('exercici_1.5.txt', `Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs`);
+comprimir();
+codificar();
+encriptacioArxiu();
 desencriptacioArxiu();
+
+
+
