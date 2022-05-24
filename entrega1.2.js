@@ -2,11 +2,7 @@
 
 //Exercici 1
 
-let sumaAuto = ((a, b) => {
-    return a + b
-})(10, 2);
-
-console.log(sumaAuto);
+console.log(((a, b) => a + b)(6,4));
 
 //Nivell 2
 
