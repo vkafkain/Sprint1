@@ -1,12 +1,16 @@
 {
   "name": "entrega1.6",
   "version": "1.0.0",
-  "description": "Entrega 1.6 - Testing",
+  "description": "Testing",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "author": "VKAFKA",
+  "keywords": [
+    "jest",
+    "testing"
+  ],
+  "author": "Víctor López",
   "license": "ISC",
   "devDependencies": {
     "jest": "^28.1.0"
