@@ -1,7 +1,7 @@
 
 Instruccions de funcionament
 
-Al final de l'arxiu entrega1.5.js hi ha les funcions comentadores, he separat les funcions per la seva operabilitat:
+Al final de l'arxiu entrega1.5.js hi ha les funcions, he separat les funcions per la seva operabilitat:
 
 -Funció que mostra missatge recursiu.
 
