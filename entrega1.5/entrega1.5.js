@@ -134,7 +134,7 @@ setTimeout(() => {
     console.log('Arxius Eliminats amb exit');
 }
 
-//Desencriptem els arxius => tornen a base64 i hex respectivament 
+//Desencriptem els arxius => tornen a base64 i hex respectivament.
 
 const desencriptacioArxiu = () => {
     setTimeout (() => {
@@ -168,22 +168,36 @@ setTimeout(() => {
 
 }
 
-//Funcio recursiva
+/* 
+Nivell 2
 
-// recursivitat();
+Exercici 1
 
-//Mostrar directori d'usuari
+Crea una funció que imprimeixi recursivament 
+un missatge per la consola amb demores d'un segon. */
 
-// mostrarDir();
+recursivitat();
+
+/* 
+Nivell 2
+
+Exercici 2
+
+Crea una funció que llisti per la consola 
+el contingut del directori d'usuari de l'ordinador 
+utilizant Node Child Processes.
+ */
+
+// mostrarDir();    
 
 //Funcions de tractarments d'arxius
 
-llegirArxiu();
+/* llegirArxiu();
 escriureArxiu('exercici_1.5.txt', `Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs`);
 comprimir();
 codificar();
 encriptacioArxiu();
 desencriptacioArxiu();
-
+ */
 
 
