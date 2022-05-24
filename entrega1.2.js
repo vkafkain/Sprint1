@@ -3,7 +3,10 @@
 //Exercici 1
 
 console.log(((a, b) => a + b)(6,4));
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/HEAD
 
 //Nivell 2
 
