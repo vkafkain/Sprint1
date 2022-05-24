@@ -176,7 +176,7 @@ Exercici 1
 Crea una funció que imprimeixi recursivament 
 un missatge per la consola amb demores d'un segon. */
 
-recursivitat();
+// recursivitat();
 
 /* 
 Nivell 2
@@ -192,12 +192,12 @@ utilizant Node Child Processes.
 
 //Funcions de tractarments d'arxius
 
-/* llegirArxiu();
+llegirArxiu();
 escriureArxiu('exercici_1.5.txt', `Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs`);
 comprimir();
 codificar();
 encriptacioArxiu();
 desencriptacioArxiu();
- */
+
 
 
