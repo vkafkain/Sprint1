@@ -2,11 +2,8 @@
 
 //Exercici 1
 
-let sumaAuto = ((a, b) => {
-    return a + b
-})(10, 2);
+console.log(((a, b) => a + b)(6,4));
 
-console.log(sumaAuto);
 
 //Nivell 2
 
@@ -68,4 +65,5 @@ let laVidaEsUnMilagro = new LaVidaEsUnMiracle();
 
 elPadrino.genere();
 laVidaEsUnMilagro.genere();
+
 
