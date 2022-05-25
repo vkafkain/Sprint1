@@ -105,7 +105,7 @@ try {
 
 const encriptacioArxiu = () => {
     setTimeout (() => {
-        const cryto = require('crypto');
+        const crypto = require('crypto');
         const algorith = 'aes-192-cbc';
         const key = 'vOVH6sdmpNWjRRIqCc7rdxs0';
         const iv = crypto.randomBytes(16);
@@ -138,7 +138,7 @@ setTimeout(() => {
 
 const desencriptacioArxiu = () => {
     setTimeout (() => {
-        const cryto = require('crypto');
+        const crypto = require('crypto');
         const algorith = 'aes-192-cbc';
         const key = 'vOVH6sdmpNWjRRIqCc7rdxs0';
         const iv = crypto.randomBytes(16);

@@ -1,3 +1,6 @@
+/* Crea un arxiu amb les funcions sumar, restar, multiplicar i dividir dos 
+o més operands. Testeja la correcta execució d'aquestes funcions. */
+
 const {sumar, restar, multiplicar, dividir} = require('../app/operacions');
 
 describe('Operaciones matemáticas', () => {

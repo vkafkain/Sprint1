@@ -27,11 +27,10 @@ let salaries = [{
 
 const getEmployee = (id) => {
     return new Promise ((resolve, reject) => {
-        let empleat ="";
         let buscat = employees.findIndex(employees => employees.id == id);
             if(buscat >= 0) {
-                empleat = employees[buscat].name;
-                resolve(`${empleat}`);
+                let empleat = employees[buscat];
+                resolve(empleat);
             } else { 
                 reject(`L'empleat ${empleat}, NO es troba a la base de dades`);
             }
@@ -40,11 +39,9 @@ const getEmployee = (id) => {
 
 const getSalary = (employee) => {
     return new Promise((resolve, reject) => {
-        let sou = 0;
         let buscat = salaries.findIndex(salaries => salaries.id == employee.id);
                 if(buscat >=0) {
-                    sou = Number(salaries[buscat].salary);
-                    resolve (sou);
+                    resolve(salaries[buscat].salary);
                 } else {
                     reject('Empleat no trobat');
         }
@@ -53,21 +50,14 @@ const getSalary = (employee) => {
 
 const funcioAsincrona = async (id) => {
     try {
-        console.log('Iniciant cerca de nom, cognoms i salari...');
-
-        let nameAndSalary = await getEmployee(id);
-        console.log(`${nameAndSalary}`);
-
-        nameAndSalary = await getSalary(employees[id-1]);
-        console.log(`${nameAndSalary}€`);
-
-        console.log('Petició finalitzada amb exit!');
-
+        const treballador = await getEmployee(id);
+        const salari = await getSalary(treballador);
+        return console.log(`treballador: ${treballador.name}, sou: ${salari}`);
     }catch(error){
         console.log(error);
     }
 }
-funcioAsincrona(1);
+funcioAsincrona(2);
 
 
 //Exercici 2 + 3
@@ -114,17 +104,15 @@ const doble = (numero) => {
         }else{
             reject('El camp introduit no és un número');
         }
-    })
+    });
 }
 
 
 const sumaDobles = async (num1, num2, num3) => {
-    try{
-        let suma = await doble(num1 + num2 + num3);
+    let suma = await doble(num1);
+        suma += await doble(num2);
+        suma += await doble(num3);
         console.log(`${suma}`);
-    }catch(error){
-        console.log(error);
-    }
 }
 sumaDobles(6,35,44); 
 

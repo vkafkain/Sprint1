@@ -1,32 +1,9 @@
-//Nivell 1
 
-//Exercici 1
+/* Invoca la primera funció getEmployee() i després getSalary() niant l'execució de les dues 
+promises de manera que es retorni per la consola el nom de l'empleat i el seu salari. */
 
-const rebut = false;
+//Arreglo el exercici arrel del feedback rebut per part del Omar
 
-function missatgeRebut(){
-    return new Promise((resolve, reject) => {
-        !rebut ? resolve("Em rebut el missatge!") : reject("Missatge NO rebut!");    
-    });
-}
-
-missatgeRebut()
-    .then((resolta) => console.log(resolta))
-    .catch((error) => console.log(error));
-
-//Exercici 2
-
-const pasarItv = ((antiguitat, callback) => {
-    antiguitat >= 5 ? callback(`El cotxe te ${antiguitat} anys, has de pasar la ITV`) : callback(`El cotxe te ${antiguitat} anys, NO has de pasar la ITV`);
-});
-
-let callback = (missatge) => {console.log(missatge)};
-
-pasarItv(4, callback); 
-
-//Nivell 2
-
-//Exercici 1
 
 let employees = [{
     id: 1,
@@ -98,3 +75,9 @@ let idBuscat = 2;
                 console.log(error);
             });
         });
+
+
+module.exports = {
+    getEmployee,
+    getSalary,
+}
