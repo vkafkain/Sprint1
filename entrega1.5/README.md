@@ -12,5 +12,5 @@ Al final de l'arxiu entrega1.5.js hi ha les funcions comentadores, he separat le
 
 Per defecte venen totes les funcions comentades, menys la primera 'recursivitat'.
 
-He arribat fins al moment de desencriptar, el programa ho fa pero l'arxiu que crea desprès de la desencriptació no he aconseguit fer-lo tornar a 'utf-8'.
+He arribat fins al moment de desencriptar, el programa ho fa però l'arxiu que crea després de la desencriptació no he aconseguit fer-lo tornar a 'utf-8'.
 

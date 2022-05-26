@@ -1,27 +1,14 @@
-#Entrega 1.6 :Testing :test_tube:
+#Entrega 1.6 :Testing 🧪
 
-Nivell 1: :star:
+Intruccions d'us : 🧙‍♂️
 
-Crea un arxiu amb les funcions sumar, restar, multiplicar i dividir dos o més operands. Testeja la correcta execució d'aquestes funcions. :white_check_mark:
+Carpetes creades:
 
-Crea els tests corresponents per verificar el funcionament de l'exercici Async / Await Nivell 1 - Exercici 1 ✅
+    app : Hi van els arxius que anem a testejar.
 
-Crea els tests corresponents per verificar el funcionament de l'exercici Async / Await Nivell 2 - Exercici 1 ✅
+    test: Test dels arxius a testejar.
 
-Crea els tests corresponents per verificar el funcionament de l'exercici Promises & Callbacks Nivell 2 - Exercici 3 ✅
-
-Verifica mitjançant tests l'execució de l'exercici Async / Await Nivell 2 Exercici 1 utilitzant Jest Fake Timers.✅
-
-
-Nivell 2: ⭐⭐
-
-Crea un mock que comprovi les crides al constructor de la classe Persona i al seu mètode decirNombre en l'exercici Classes & Arrow Functions - Nivell 2 Exercici 2
-
-Verifica mitjançant tests l'exercici Classes & Arrow Functions Nivell 3 - Exercici 1.
-
-Nivell 3: ⭐⭐⭐
-
-Refès l'exercici Async / Await Nivell 1 accedint a un fitxer extern JSON. Crea tests que demostrin la correcta execució de l'exercici fent un mock del fitxer JSON.
-
-Utilitzant com a base l'exercici Async / Await Nivells 2 i 3, crea un test que forci errors de funcionament i verifiqui que l'error llançat per la funció és l'esperat.
-
+    __mocks__ : Van els arxius que farem mock.
+    
+A cadascun del arxius de la carpeta test hi ha l'enunciat al principi del codi.
+Per executar els test a la carpeta entrega1.6 executar per terminal npm test. 
