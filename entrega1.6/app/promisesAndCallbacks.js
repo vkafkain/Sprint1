@@ -63,7 +63,7 @@ getSalary({
 
 // Exercici 3
 
-let idBuscat = 2;
+let idBuscat = 3;
 
     getEmployee(idBuscat)
         .then((resolta) => {

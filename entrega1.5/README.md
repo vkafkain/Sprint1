@@ -1,6 +1,6 @@
-Entrega 1.5 : Node Utils
+#Entrega 1.5 : Node Utils 🛠️
 
-Instruccions de funcionament :mage_man:
+Instruccions d'us : 🧙‍♂️
 
 Al final de l'arxiu entrega1.5.js hi ha les funcions comentadores, he separat les funcions per la seva operabilitat:
 
