@@ -56,7 +56,7 @@ const recursivitat = (num) => {
 const mostrarDir = () => {
 const { exec } = require('child_process');
 
-exec('dir',["C:\\users\\"], (error, stdout, stderr) => {
+exec('dir', (error, stdout, stderr) => {
     if(error) {
         console.log(`Error: ${error}`)
         return
