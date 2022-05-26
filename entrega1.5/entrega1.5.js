@@ -188,16 +188,27 @@ el contingut del directori d'usuari de l'ordinador
 utilizant Node Child Processes.
  */
 
-// mostrarDir();    
+mostrarDir();    
 
 //Funcions de tractarments d'arxius
 
-llegirArxiu();
+//Nivell 1
+/* 
+//Exercici 1
 escriureArxiu('exercici_1.5.txt', `Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs`);
+
+//Exercici 2
+llegirArxiu();
+
+//Exercici 3
 comprimir();
+
+//Nivell 3
+
+//Exercici 1
 codificar();
 encriptacioArxiu();
 desencriptacioArxiu();
 
-
+ */
 
