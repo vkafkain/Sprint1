@@ -30,39 +30,31 @@ funcioNom.dirNom();
 
 //Exercici 1
 
-let Pelicules = function() {
-    if (this.constructor === Pelicules) {
+
+function Pelicula(nom) {
+    this.nom = nom;
+
+    if (this.constructor === Pelicula) {
         return console.log("No es pot instanciar una clase abstracta");
     }
-};
-Pelicules.prototype.genere = function() {
-    return console.log("Metode abstracte")
-};
-
-let ElPadrino = function() {
-    Pelicules.apply(this, arguments);
-};
-ElPadrino.prototype = Object.create(Pelicules.prototype);
-ElPadrino.prototype.constructor = ElPadrino;
-
-ElPadrino.prototype.genere = function() {
-    console.log('mafia');
 }
 
-let LaVidaEsUnMiracle = function(){
-    Pelicules.apply(this, arguments);
-};
-LaVidaEsUnMiracle.prototype = Object.create(Pelicules.prototype);
-LaVidaEsUnMiracle.prototype.constructor = LaVidaEsUnMiracle;
-
-LaVidaEsUnMiracle.prototype.genere = function() {
-    console.log('tragicomedia');
+try {
+    const elPadrino = new Pelicula()
+} catch(error){
+    console.log(`Error : ${error}`);
 }
 
-let elPadrino = new ElPadrino();
-let laVidaEsUnMilagro = new LaVidaEsUnMiracle();
+const crearPelicula = (nom) => {
+    const pelicula = Object.create(Pelicula.prototype);
+    pelicula.nom = nom;
+    return pelicula;
+}
+const cienciaFiccio = crearPelicula('Matrix');
 
-elPadrino.genere();
-laVidaEsUnMilagro.genere();
+console.log('Objecte instanciat:');
+console.log(cienciaFiccio);
 
+console.log('És instancia de Pelicula:');
+console.log(cienciaFiccio instanceof Pelicula);
 
