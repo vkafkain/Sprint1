@@ -4,12 +4,10 @@
 
 let fs = require('fs');
 
-
 const escriureArxiu = (nom, info) => {
     fs.writeFile(nom, info, error => {
         if(error) {
             console.log(`Error: ${error}`);
-            
         }
     });
 }
@@ -58,7 +56,7 @@ const recursivitat = (num) => {
 const mostrarDir = () => {
 const { exec } = require('child_process');
 
-exec('dir', (error, stdout, stderr) => {
+exec('dir',["C:\\users\\"], (error, stdout, stderr) => {
     if(error) {
         console.log(`Error: ${error}`)
         return
@@ -165,7 +163,6 @@ setTimeout(() => {
 });
 },3000);
     console.log('Arxius Eliminats amb exit');
-
 }
 
 /* 
@@ -174,41 +171,35 @@ Nivell 2
 Exercici 1
 
 Crea una funció que imprimeixi recursivament 
-un missatge per la consola amb demores d'un segon. */
+un missatge per la consola amb demores d'un segon.  */
 
-// recursivitat();
+recursivitat();
 
-/* 
-Nivell 2
+/* Nivell 2
 
 Exercici 2
 
-Crea una funció que llisti per la consola 
-el contingut del directori d'usuari de l'ordinador 
-utilizant Node Child Processes.
- */
+Crea una funció que llisti per la consola el contingut 
+del directori d'usuari de l'ordinador utilizant Node Child Processes. */
 
-mostrarDir();    
+// mostrarDir();    
 
 //Funcions de tractarments d'arxius
 
 //Nivell 1
-/* 
+
 //Exercici 1
-escriureArxiu('exercici_1.5.txt', `Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs`);
+// escriureArxiu('exercici_1.5.txt', `Estic escrivint en un arxiu de textos des de Visual Studio Code amb Nodejs`);
 
 //Exercici 2
-llegirArxiu();
+// llegirArxiu();
 
 //Exercici 3
-comprimir();
+// comprimir();
 
 //Nivell 3
 
 //Exercici 1
-codificar();
-encriptacioArxiu();
-desencriptacioArxiu();
-
- */
-
+// codificar();
+// encriptacioArxiu();
+// desencriptacioArxiu();
