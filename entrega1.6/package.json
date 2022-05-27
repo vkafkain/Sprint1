@@ -1,7 +1,7 @@
 {
   "name": "entrega1.6",
   "version": "1.0.0",
-  "description": "Entrega 1.6 - Testing",
+  "description": "Entrega 1.6-Testing",
   "scripts": {
     "test": "jest"
   },

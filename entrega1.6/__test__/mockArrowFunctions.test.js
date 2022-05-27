@@ -1,3 +1,4 @@
+
 // Verifica mitjançant tests l'exercici Classes & Arrow Functions Nivell 3 - Exercici 1.
 
 const { Persona } = require("../__mocks__/mockArrowFunctions");

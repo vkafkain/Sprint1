@@ -1,3 +1,4 @@
+//Exportem la clase Persona
 
 class Persona {
     constructor(nom) {

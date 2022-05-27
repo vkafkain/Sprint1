@@ -1,4 +1,3 @@
-
 //Modifiquem l'exercici per poder rebre l'arxiu JSON. També es podria fer amb fs.readFileSync de manera síncrona o amb fs.readFile asíncrona.
 
 const {employees} = require('../employeesSalaries.json');
