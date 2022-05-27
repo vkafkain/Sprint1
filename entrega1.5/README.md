@@ -1,8 +1,8 @@
-#Entrega 1.5 : Node Utils 🛠️
+Entrega 1.5 : Node Utils 🛠️
 
 Instruccions d'us : 🧙‍♂️
 
-Al final de l'arxiu entrega1.5.js hi ha les funcions comentadores, he separat les funcions per la seva operabilitat:
+Al final de l'arxiu entrega1.5.js hi ha les funcions comentades, he separat les funcions per la seva operabilitat:
 
 -Funció que mostra missatge recursiu.
 
@@ -12,5 +12,4 @@ Al final de l'arxiu entrega1.5.js hi ha les funcions comentadores, he separat le
 
 Per defecte venen totes les funcions comentades, menys la primera 'recursivitat'.
 
-He arribat fins al moment de desencriptar, el programa ho fa però l'arxiu que crea després de la desencriptació amb els dos casos és un arxiu amb base 64 pero els primers digits els retorna com simbols...No he aconseguit fer-lo tornar a 'utf-8'.
-
+He arribat fins al moment de desencriptar, el programa ho fa, però l'arxiu que crea després de la desencriptació amb els dos casos és un arxiu amb base 64 però els primers dígits els retorna com símbols... No he aconseguit fer-lo tornar a 'utf-8'.
