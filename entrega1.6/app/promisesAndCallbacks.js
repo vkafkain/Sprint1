@@ -4,7 +4,6 @@ promises de manera que es retorni per la consola el nom de l'empleat i el seu sa
 
 //Arreglo el exercici arrel del feedback rebut per part del Omar
 
-
 let employees = [{
     id: 1,
     name: 'Linux Torvalds'

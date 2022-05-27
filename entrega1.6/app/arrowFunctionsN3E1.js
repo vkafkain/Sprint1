@@ -22,7 +22,6 @@ const cienciaFiccio = crearPelicula('Matrix');
 
 console.log('Objecte instanciat:');
 console.log(cienciaFiccio);
-
 console.log('És instancia de Pelicula:');
 console.log(cienciaFiccio instanceof Pelicula);
 
