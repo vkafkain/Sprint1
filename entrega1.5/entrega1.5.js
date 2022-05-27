@@ -173,7 +173,7 @@ Exercici 1
 Crea una funció que imprimeixi recursivament 
 un missatge per la consola amb demores d'un segon.  */
 
-// recursivitat(3);
+recursivitat(3);
 
 /* Nivell 2
 
@@ -200,6 +200,6 @@ del directori d'usuari de l'ordinador utilizant Node Child Processes. */
 //Nivell 3
 
 //Exercici 1
-codificar();
-encriptacioArxiu();
-desencriptacioArxiu();
+// codificar();
+// encriptacioArxiu();
+// desencriptacioArxiu();
