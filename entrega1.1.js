@@ -60,7 +60,6 @@ for(let i = 0; i <10; i++){
     arrayDeuVegades[i]();
 }
 
-
 //Exercici 2
 
 let mostrar = (name => console.log(`L'usuari ${name} te molt ping.`))(`Joan`);
